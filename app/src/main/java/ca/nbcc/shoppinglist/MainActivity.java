@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MSG = MainActivity.class.getSimpleName();
 
-    private int[] ids = {R.id.item1,R.id.item2,R.id.item3,R.id.item4,R.id.item5,R.id.item6,R.id.item7,R.id.item8,R.id.item9,R.id.item10};
+    private LinearLayout svContent;
+
     private HashMap<String,Integer> cartMap = new HashMap<String,Integer>();
 
     @Override
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        svContent = findViewById(R.id.MainActivity_Content);
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("CartHistory")) {
                 cartMap = (HashMap<String,Integer>)savedInstanceState.getSerializable("CartHistory");
@@ -40,24 +44,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populateTexts(){
-        for (String key: cartMap.keySet()) {
-            Integer count = cartMap.get(key);
-            for (int id:ids) {
-                TextView txtView = findViewById(id);
-                if (txtView.getText().toString().contains(key)) {
-                    txtView.setText(key + ":" + count.intValue());
-                    break;
-                }
+        final int childCount = svContent.getChildCount();
 
-                if(txtView.getText().length() <= 0) {
-                    if (count.intValue() > 0){
-                        txtView.setText(key + ":" + count.intValue());
-                    }else{
-                        txtView.setText(key);
+        AAA:for (String key: cartMap.keySet()) {
+            Integer count = cartMap.get(key);
+
+            for (int i = 0; i < childCount; i++) {
+                View v = svContent.getChildAt(i);
+                if (v instanceof TextView) {
+                    TextView temp = (TextView) v;
+
+                    if (temp.getText().toString().contains(key)) {
+                        temp.setText(key + ":" + count.intValue());
+                        continue AAA;
                     }
-                    break;
                 }
             }
+
+            TextView txtView = new TextView(this);
+            txtView.setTextSize(20);
+            txtView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            txtView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+            txtView.setText(key + ":" + count.intValue());
+            svContent.addView(txtView);
         }
     }
 

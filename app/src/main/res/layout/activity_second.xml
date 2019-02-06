@@ -7,70 +7,83 @@
     android:orientation="vertical"
     tools:context=".SecondActivity">
 
-    <Button
-        android:id="@+id/btnCheese"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cheese"
-        android:textAllCaps="true"
-        android:onClick="onButtonClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnCheese"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/cheese"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:onClick="onButtonClick"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"/>-->
 
-    <Button
-        android:id="@+id/btnRice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/rice"
-        android:textAllCaps="true"
-        android:onClick="onButtonClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCheese"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnRice"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/rice"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:onClick="onButtonClick"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/btnCheese"/>-->
 
-    <Button
-        android:id="@+id/btnApple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/apple"
-        android:textAllCaps="true"
-        android:onClick="onButtonClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnRice"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnApple"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/apple"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:onClick="onButtonClick"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/btnRice"/>-->
 
-    <Button
-        android:id="@+id/btnSault"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sault"
-        android:textAllCaps="true"
-        android:onClick="onButtonClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnApple"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnSault"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/sault"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:onClick="onButtonClick"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/btnApple"/>-->
 
-    <Button
-        android:id="@+id/btnDumpling"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/dumpling"
-        android:textAllCaps="true"
-        android:onClick="onButtonClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSault"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnDumpling"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/dumpling"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:onClick="onButtonClick"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/btnSault"/>-->
 
-    <Button
-        android:id="@+id/btnPasta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pasta"
-        android:textAllCaps="true"
-        android:onClick="onButtonClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnDumpling"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnPasta"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/pasta"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:onClick="onButtonClick"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/btnDumpling"/>-->
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
